@@ -4,7 +4,7 @@ const app = express();
 const path = require("path");
 const bodyparser = require("body-parser");
 const cors = require("cors");
-require("./MongodbConnection/MongoConnection"); //Mongodb Connection
+require("./Model/MongoConnection"); //Mongodb Connection
 
 const PORT = process.env.PORT || 4000;
 if (process.env.NODE_ENV === "production") {

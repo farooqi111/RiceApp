@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 mongoose.connect(
-  "mongodb://<dbuser>:<dbpassword>@ds163510.mlab.com:63510/heroku_2hgcdhms",
+  "mongodb://farooqi:Assasin@123@ds163510.mlab.com:63510/heroku_2hgcdhms",
   {
     useNewUrlParser: true
   }
