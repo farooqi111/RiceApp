@@ -10,7 +10,7 @@ import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import purple from "@material-ui/core/colors/purple";
 import API from "../Api/API";
-
+import axios from "axios";
 const accent = purple["A700"];
 
 const styles = {
@@ -28,6 +28,7 @@ class GetExpenses extends Component {
   }
 
   componentDidMount() {
+    //console.log(API);
     API.get("/electricitybills/")
       .then(response => {
         this.setState({ Bills: response.data });
