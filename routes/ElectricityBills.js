@@ -1,4 +1,5 @@
 var { electricityBills } = require("../Model/Rice.Model");
+
 let express = require("express");
 let router = express.Router();
 
@@ -20,9 +21,9 @@ router.route("/:id").get(function(req, res) {
   });
 });
 router.route("/add").post(function(req, res) {
-  console.log(req.body);
   let bills = new electricityBills(req.body);
   console.log(bills);
+
   bills
     .save()
     .then(bills => {

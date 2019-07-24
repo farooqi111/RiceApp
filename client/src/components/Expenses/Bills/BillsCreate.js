@@ -12,7 +12,7 @@ import MySnackbarContentWrapper from "../../SnackBar";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import API from "../../Api/API";
-import axios from "axios";
+
 const accent = purple["A700"];
 const styles = {
   root: {

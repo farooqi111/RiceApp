@@ -43,6 +43,17 @@ app.use("/buildingMentainence", buildingMentainence);
 app.use("/machineryMentainence", machinerymentainence);
 app.use("/miscellaneousExpenses", miscellaneousExpenses);
 
+mongoose.connect(
+  "mongodb://heroku_2hgcdhms:p7d84tdeeuqv3336mr298seuva@ds163510.mlab.com:63510/heroku_2hgcdhms",
+  {
+    useNewUrlParser: true
+  }
+);
+const connection = mongoose.connection;
+connection.once("open", function() {
+  console.log("Mongoose database connection is established successfully");
+});
+
 app.listen(PORT, function() {
   console.log("Server is running on Port: " + PORT);
 });
