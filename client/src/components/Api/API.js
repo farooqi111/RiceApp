@@ -1,7 +1,7 @@
 import axios from "axios";
 
-/* export default axios.create({
-  baseURL: "http://localhost:4000"
+ export default axios.create({
+  baseURL: "https://farooqitraders.herokuapp.com"
 });
- */
+ 
 export default axios;
