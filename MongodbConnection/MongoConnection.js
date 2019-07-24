@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/RiceDatabase", {
-  useNewUrlParser: true
-});
+mongoose.connect(
+  "mongodb://<dbuser>:<dbpassword>@ds163510.mlab.com:63510/heroku_2hgcdhms",
+  {
+    useNewUrlParser: true
+  }
+);
 const connection = mongoose.connection;
 connection.once("open", function() {
   console.log("Mongoose database connection is established successfully");
