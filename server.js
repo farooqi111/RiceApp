@@ -6,7 +6,7 @@ const bodyparser = require("body-parser");
 const cors = require("cors");
 require("./MongodbConnection/MongoConnection"); //Mongodb Connection
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 if (process.env.NODE_ENV === "production") {
   //set static folder
   app.use(express.static("client/build"));
