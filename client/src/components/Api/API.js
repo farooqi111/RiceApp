@@ -1,7 +1,7 @@
 import axios from "axios";
 
  export default axios.create({
-  baseURL: "https://farooqitraders.herokuapp.com"
+  baseURL: "http://farooqitraders.herokuapp.com"
 });
  
 export default axios;
