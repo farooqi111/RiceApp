@@ -17,14 +17,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "YOUR-DOMAIN.TLD"); // update to match the domain you will make the request from
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+
 let employees = require("./routes/Employees");
 let eBills = require("./routes/ElectricityBills");
 let gBills = require("./routes/GasBills");

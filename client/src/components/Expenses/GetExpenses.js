@@ -173,7 +173,8 @@ class GetExpenses extends Component {
         </Grid>
         {console.log(Bills)
         /*  <TableList List={Bills} id={expenseType} search={this.state.search} />
-         */}{" "}
+         */
+        }{" "}
       </div>
     );
   }

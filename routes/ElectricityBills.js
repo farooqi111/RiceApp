@@ -11,11 +11,10 @@ router.route("/").get(function(req, res) {
       } else {
         res.json(bills);
       }
-      res.setHeader("Content-Type", "application/json");
-      next();
     })
     .sort({ _id: -1 });
 });
+
 router.route("/:id").get(function(req, res) {
   let id = req.params.id;
   electricityBills.findById(id, function(err, bills) {
