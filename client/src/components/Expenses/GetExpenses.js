@@ -172,7 +172,8 @@ class GetExpenses extends Component {
             </Link>
           </Grid>
         </Grid>
-        {/*  <TableList List={Bills} id={expenseType} search={this.state.search} />
+        {console.log(Bills)
+        /*  <TableList List={Bills} id={expenseType} search={this.state.search} />
          */}{" "}
       </div>
     );
