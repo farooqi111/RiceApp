@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
 export default function EmployeeDetails(props) {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
+  const [load, setLoad] = React.useState(false);
   const [employee, setEmployee] = React.useState({
     employees_name: "",
     employees_type: "",
@@ -54,6 +55,7 @@ export default function EmployeeDetails(props) {
   React.useEffect(() => {
     API.get("/employees/" + id)
       .then(response => {
+        setLoad(true);
         setEmployee(response.data);
         setType("data:" + response.data.employees_idPhoto.type + ";base64,");
         if (response.data.employees_idPhoto.data) {
@@ -76,7 +78,7 @@ export default function EmployeeDetails(props) {
           <Paper className={fixedHeightPaper}>
             <Grid container spacing={2}>
               <Grid item xs={6} md={6} lg={6}>
-                <h3>{employee.employees_name}</h3>
+                {load && <h3>{employee.employees_name}</h3>}
                 <h5>Role: {employee.employees_type}</h5>
                 <PhoneIcon />
                 {employee.employees_phoneNo}
