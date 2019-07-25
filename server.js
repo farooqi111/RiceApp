@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
+const history = require("connect-history-api-fallback");
 const app = express();
 const path = require("path");
 const bodyparser = require("body-parser");
