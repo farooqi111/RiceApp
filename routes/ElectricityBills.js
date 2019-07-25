@@ -9,7 +9,7 @@ router.route("/").get(function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.json(bills);
+        res.send(bills);
       }
     })
     .sort({ _id: -1 });
