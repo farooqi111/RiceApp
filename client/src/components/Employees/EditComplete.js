@@ -178,7 +178,7 @@ class EditComplete extends Component {
       console.log(updateEmployee);
       API.post("/employees/update/" + editId, updateEmployee).then(res => {
         if (this.state.fileCheck) {
-          API.post("employees/updateImg/" + editId, img).then(res => {
+          API.post("/employees/updateImg/" + editId, img).then(res => {
             this.props.history.push({
               pathname: "/Employees",
               state: { check: "created" }
