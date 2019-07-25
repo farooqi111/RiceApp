@@ -5,14 +5,8 @@ let router = express.Router();
 
 router.route("/").get(function(req, res) {
   electricityBills
-    .find(function(err, bills) {
-      if (err) {
-        console.log(err);
-      } else {
-        res.json(bills);
-        res.type("application/json");
-      }
-    })
+    .find()
+    .then(items => res.json(items))
     .sort({ _id: -1 });
 });
 router.route("/:id").get(function(req, res) {
