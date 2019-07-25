@@ -77,22 +77,25 @@ export default function EmployeeDetails(props) {
         <Container maxWidth="lg" className={classes.container}>
           <Paper className={fixedHeightPaper}>
             <Grid container spacing={2}>
-              <Grid item xs={6} md={6} lg={6}>
-                {load && <h3>{employee.employees_name}</h3>}
-                <h5>Role: {employee.employees_type}</h5>
-                <PhoneIcon />
-                {employee.employees_phoneNo}
-                <h5>Reference: {employee.employees_reference.ref_name}</h5>
-                <h5>Salary: Rs {employee.employees_salary}</h5>
-                <PhoneIcon />
-                {employee.employees_reference.ref_phoneNumber}
-                <br />
+              {load && (
+                <Grid item xs={6} md={6} lg={6}>
+                  <h3>{employee.employees_name}</h3>
+                  <h5>Role: {employee.employees_type}</h5>
+                  <PhoneIcon />
+                  {employee.employees_phoneNo}
+                  <h5>Reference: {employee.employees_reference.ref_name}</h5>
+                  <h5>Salary: Rs {employee.employees_salary}</h5>
+                  <PhoneIcon />
+                  {employee.employees_reference.ref_phoneNumber}
+                  <br />
 
-                <h5>
-                  <Address /> {employee.employees_address}
-                </h5>
-                <h5>Hiring Date: {employee.employees_date}</h5>
-              </Grid>
+                  <h5>
+                    <Address /> {employee.employees_address}
+                  </h5>
+                  <h5>Hiring Date: {employee.employees_date}</h5>
+                </Grid>
+              )}
+
               <Grid item xs={6} md={6} lg={6} style={{ textAlign: "center" }}>
                 {img && (
                   <img
