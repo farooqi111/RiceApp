@@ -12,7 +12,7 @@ router.route("/").get(function(req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.json(Employees);
+      res.send(Employees);
     }
   }).sort({ _id: -1 });
 });
