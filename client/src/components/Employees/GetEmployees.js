@@ -35,6 +35,7 @@ class GetEmployees extends Component {
         this.setState({ Employees: res.data });
       })
       .catch(err => {
+        this.setState({ Employees: "" });
         console.log(err);
       });
   }
