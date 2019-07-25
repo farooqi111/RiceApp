@@ -9,7 +9,7 @@ router.route("/").get(function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        res.set("Content-Type", "application/json");
+        // res.set("Content-Type", "application/json");
         res.json(bills);
       }
     })
