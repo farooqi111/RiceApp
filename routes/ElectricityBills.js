@@ -11,7 +11,8 @@ router.route("/").get(function(req, res) {
       } else {
         res.json(bills);
       }
-      res.set("Content-Type", "application/json");
+      res.setHeader("Content-Type", "application/json");
+      next();
     })
     .sort({ _id: -1 });
 });
