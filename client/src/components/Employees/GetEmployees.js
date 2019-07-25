@@ -83,8 +83,10 @@ class GetEmployees extends Component {
             </Link>
           </Grid>
         </Grid>
-
-        <TableList List={this.state.Employees} search={this.state.search} />
+        {console.log(
+          this.state.Employees
+        ) /* 
+        <TableList List={this.state.Employees} search={this.state.search} /> */}
       </div>
     );
   }
