@@ -9,9 +9,9 @@ router.route("/").get(function(req, res) {
       if (err) {
         console.log(err);
       } else {
-        // res.set("Content-Type", "application/json");
         res.json(bills);
       }
+      res.set("Content-Type", "application/json");
     })
     .sort({ _id: -1 });
 });
