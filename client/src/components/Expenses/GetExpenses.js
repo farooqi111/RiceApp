@@ -29,8 +29,7 @@ class GetExpenses extends Component {
 
   componentDidMount() {
     //console.log(API);
-    axios
-      .get("/electricitybills/")
+    API.get("/electricitybills/")
       .then(response => {
         this.setState({ Bills: response.data });
       })
