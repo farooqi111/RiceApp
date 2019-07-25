@@ -26,13 +26,15 @@ class GetEmployees extends Component {
     super(props);
     this.state = {
       search: "",
-      Employees: []
+      Employees: [],
+      load: false
     };
   }
   componentDidMount() {
     API.get("/employees/Names")
       .then(res => {
         this.setState({ Employees: res.data });
+        this.setState({ load: true });
       })
       .catch(err => {
         console.log(err);
@@ -43,6 +45,7 @@ class GetEmployees extends Component {
       API.get("/employees/Names")
         .then(res => {
           this.setState({ Employees: res.data });
+          this.setState({ load: true });
         })
         .catch(err => {
           console.log(err);
@@ -81,8 +84,9 @@ class GetEmployees extends Component {
             </Link>
           </Grid>
         </Grid>
-
-        <TableList List={this.state.Employees} search={this.state.search} />
+        {!this.state.load && (
+          <TableList List={this.state.Employees} search={this.state.search} />
+        )}
       </div>
     );
   }
