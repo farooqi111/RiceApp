@@ -6,7 +6,7 @@ const path = require("path");
 const bodyparser = require("body-parser");
 const cors = require("cors");
 require("./Model/MongoConnection"); //Mongodb Connection
-
+require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 if (process.env.NODE_ENV === "production") {
   //set static folder
