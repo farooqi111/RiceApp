@@ -31,7 +31,6 @@ class GetEmployees extends Component {
   }
   componentDidMount() {
     API.get("/employees/Names")
-      .then(res => res.json())
       .then(res => {
         this.setState({ Employees: res.data });
       })
