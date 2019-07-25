@@ -5,8 +5,14 @@ let router = express.Router();
 
 router.route("/").get(function(req, res) {
   electricityBills
-    .find()
-    .then(items => res.json(items))
+    .find(function(err, bills) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.set("Content-Type", "application/json");
+        res.json(bills);
+      }
+    })
     .sort({ _id: -1 });
 });
 router.route("/:id").get(function(req, res) {
