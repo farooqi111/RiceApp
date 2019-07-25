@@ -84,7 +84,7 @@ class GetEmployees extends Component {
             </Link>
           </Grid>
         </Grid>
-        {!this.state.load && (
+        {this.state.load && (
           <TableList List={this.state.Employees} search={this.state.search} />
         )}
       </div>
