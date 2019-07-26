@@ -23,7 +23,8 @@ class GetExpenses extends Component {
     super(props);
     this.state = {
       Bills: [],
-      search: ""
+      search: "",
+      load: false
     };
   }
 
@@ -32,6 +33,7 @@ class GetExpenses extends Component {
     API.get("/electricitybills/")
       .then(response => {
         this.setState({ Bills: response.data });
+        this.setState({ load: true });
       })
       .catch(function(error) {
         console.log(error);
@@ -43,6 +45,7 @@ class GetExpenses extends Component {
         API.get("/electricitybills/")
           .then(response => {
             this.setState({ Bills: response.data });
+            this.setState({ load: true });
           })
           .catch(function(error) {
             console.log(error);
@@ -53,6 +56,7 @@ class GetExpenses extends Component {
         API.get("/gasbills/")
           .then(response => {
             this.setState({ Bills: response.data });
+            this.setState({ load: true });
           })
           .catch(function(error) {
             console.log(error);
@@ -63,6 +67,7 @@ class GetExpenses extends Component {
         API.get("/fuel/")
           .then(response => {
             this.setState({ Bills: response.data });
+            this.setState({ load: true });
           })
 
           .catch(function(error) {
@@ -74,6 +79,7 @@ class GetExpenses extends Component {
         API.get("/motorRepair/")
           .then(response => {
             this.setState({ Bills: response.data });
+            this.setState({ load: true });
           })
 
           .catch(function(error) {
@@ -85,6 +91,7 @@ class GetExpenses extends Component {
         API.get("/engineOil/")
           .then(response => {
             this.setState({ Bills: response.data });
+            this.setState({ load: true });
           })
 
           .catch(function(error) {
@@ -96,6 +103,7 @@ class GetExpenses extends Component {
         API.get("/repairParts/")
           .then(response => {
             this.setState({ Bills: response.data });
+            this.setState({ load: true });
           })
 
           .catch(function(error) {
@@ -106,6 +114,7 @@ class GetExpenses extends Component {
       if (this.props !== prevProps) {
         API.get("/buildingMentainence/")
           .then(response => {
+            this.setState({ load: true });
             this.setState({ Bills: response.data });
           })
 
@@ -118,6 +127,7 @@ class GetExpenses extends Component {
         API.get("/machineryMentainence/")
           .then(response => {
             this.setState({ Bills: response.data });
+            this.setState({ load: true });
           })
 
           .catch(function(error) {
@@ -129,6 +139,7 @@ class GetExpenses extends Component {
         API.get("/miscellaneousExpenses/")
           .then(response => {
             this.setState({ Bills: response.data });
+            this.setState({ load: true });
           })
 
           .catch(function(error) {
@@ -171,7 +182,9 @@ class GetExpenses extends Component {
             </Link>
           </Grid>
         </Grid>
-        {<TableList List={Bills} id={expenseType} search={this.state.search} />}{" "}
+        {this.state.load && (
+          <TableList List={Bills} id={expenseType} search={this.state.search} />
+        )}
       </div>
     );
   }
