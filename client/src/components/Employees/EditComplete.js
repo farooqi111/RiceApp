@@ -146,11 +146,18 @@ class EditComplete extends Component {
   onSubmit = e => {
     e.preventDefault();
     const { editId } = this.props;
-
+    var today = new Date(),
+      date =
+        today.getFullYear() +
+        "-" +
+        (today.getMonth() + 1) +
+        "-" +
+        today.getDate();
     const updateEmployee = {
       employees_name: this.state.name,
       employees_type: this.state.type,
       employees_address: this.state.address,
+      employees_date: date,
       employees_salary: this.state.salary,
       employees_phoneNo: this.state.phoneNo,
       employees_reference: {
