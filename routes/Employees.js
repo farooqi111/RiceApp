@@ -126,7 +126,7 @@ router.route("/update/:id").post(function(req, res) {
       //photo remaining
       employee.employees_name = req.body.employees_name;
       employee.employees_type = req.body.employees_type;
-      employee.employees_date = req.destroy.employees_date;
+      employee.employees_date = req.body.employees_date;
       employee.employees_idPhoto = req.body.employees_idPhoto;
       employee.employees_salary = req.body.employees_salary;
       employee.employees_phoneNo = req.body.employees_phoneNo;

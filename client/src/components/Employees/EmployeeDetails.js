@@ -51,7 +51,6 @@ export default function EmployeeDetails(props) {
 
   const id = props.match.params.id;
 
-  //console.log(props.match.params.id);
   React.useEffect(() => {
     API.get("/employees/" + id)
       .then(response => {
