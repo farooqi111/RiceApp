@@ -171,6 +171,7 @@ class EditComplete extends Component {
       updateEmployee.employees_address === "" ||
       updateEmployee.employees_phoneNo === "" ||
       updateEmployee.employees_salary === "" ||
+      updateEmployee.employees_date === "" ||
       updateEmployee.employees_reference.ref_name === "" ||
       updateEmployee.employees_reference.ref_phoneNumber === ""
     ) {
