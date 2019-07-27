@@ -103,19 +103,13 @@ class BillsCreate extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
-    var today = new Date(),
-      date =
-        today.getFullYear() +
-        "-" +
-        (today.getMonth() + 1) +
-        "-" +
-        today.getDate();
+    var today = new Date();
 
     const newBill = {
       cost: this.state.cost,
       type: this.state.type,
       paid: this.state.paid,
-      date: date,
+      date: today,
       description: this.state.description
     };
     if (

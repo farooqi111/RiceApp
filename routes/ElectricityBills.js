@@ -1,20 +1,26 @@
 var { electricityBills } = require("../Model/Rice.Model");
-
 let express = require("express");
 let router = express.Router();
 
+var d = new Date();
+m = d.getMonth(); //current month
+y = d.getFullYear(); //current year
+var start = new Date(y, m, 1 + 1);
+var end = new Date(y, m + 1);
+
 router.route("/").get(function(req, res) {
+  dbQuery = { date: { $gte: start, $lt: end } };
+
   electricityBills
-    .find(function(err, bills) {
+    .find(dbQuery, function(err, bills) {
       if (err) {
         console.log(err);
       } else {
-        res.send(bills);
+        res.json(bills);
       }
     })
     .sort({ _id: -1 });
 });
-
 router.route("/:id").get(function(req, res) {
   let id = req.params.id;
   electricityBills.findById(id, function(err, bills) {
@@ -22,9 +28,9 @@ router.route("/:id").get(function(req, res) {
   });
 });
 router.route("/add").post(function(req, res) {
+  console.log(req.body);
   let bills = new electricityBills(req.body);
   console.log(bills);
-
   bills
     .save()
     .then(bills => {

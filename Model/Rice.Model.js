@@ -9,7 +9,7 @@ var ElectricityBills = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
 
   paid: {
@@ -25,7 +25,7 @@ var GasBills = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
   paid: {
     type: Boolean
@@ -39,7 +39,7 @@ var PetrolExpense = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
   paid: {
     type: Boolean
@@ -53,7 +53,7 @@ var MotorRepairExpense = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
   paid: {
     type: Boolean
@@ -67,7 +67,7 @@ var EngineOilExpense = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
   paid: {
     type: Boolean
@@ -81,7 +81,7 @@ var RepairPartsExpense = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
   paid: {
     type: Boolean
@@ -95,7 +95,7 @@ var BuildingMentainence = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
   paid: {
     type: Boolean
@@ -109,7 +109,7 @@ var machineryMentainence = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
   paid: {
     type: Boolean
@@ -123,7 +123,7 @@ var MiscellaneousExpenses = new Schema({
     type: String
   },
   date: {
-    type: String
+    type: Date
   },
 
   paid: {

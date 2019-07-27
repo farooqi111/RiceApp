@@ -3,9 +3,16 @@ let express = require("express");
 let router = express.Router();
 var myDateString = Date();
 
+var d = new Date();
+m = d.getMonth(); //current month
+y = d.getFullYear(); //current year
+var start = new Date(y, m, 1 + 1);
+var end = new Date(y, m + 1);
+
 router.route("/").get(function(req, res) {
+  dbQuery = { date: { $gte: start, $lt: end } };
   gasBills
-    .find(function(err, bills) {
+    .find(dbQuery, function(err, bills) {
       if (err) {
         console.log(err);
       } else {
